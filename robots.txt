@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://backlinkforge.github.io/sitemap.xml
