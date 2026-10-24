@@ -74,6 +74,20 @@ select:focus-visible, textarea:focus-visible {
 }
 .main-nav a:hover { background: rgba(255,255,255,.12); color: #fff; }
 .main-nav a[aria-current="page"] { background: rgba(255,255,255,.16); color: #fff; }
+.main-nav .nav-parent {
+  color: #dbe7f5; padding: 8px 12px; border-radius: 6px;
+  font-size: .95rem; cursor: default; display: inline-block;
+}
+.main-nav li.has-dropdown { position: relative; }
+.main-nav .dropdown-menu {
+  display: none; position: absolute; top: 100%; left: 0; z-index: 20;
+  background: var(--navy-dark); border-radius: 8px; padding: 8px 0;
+  min-width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  flex-direction: column; gap: 0;
+}
+.main-nav li.has-dropdown:hover .dropdown-menu,
+.main-nav li.has-dropdown:focus-within .dropdown-menu { display: flex; }
+.main-nav .dropdown-menu a { display: block; padding: 10px 16px; }
 .nav-toggle {
   display: none; background: none; border: 1px solid rgba(255,255,255,.4);
   color: #fff; border-radius: 6px; padding: 8px 12px; font-size: 1rem; cursor: pointer;
@@ -227,6 +241,12 @@ select:focus-visible, textarea:focus-visible {
   .main-nav.open { display: block; }
   .main-nav ul { flex-direction: column; gap: 0; padding: 8px 0; }
   .main-nav a { display: block; padding: 10px 4px; }
+  .main-nav .nav-parent { display: block; padding: 10px 4px; }
+  .main-nav .dropdown-menu {
+    position: static; display: block; box-shadow: none;
+    background: transparent; padding: 0 0 0 16px; min-width: 0;
+  }
+  .main-nav .dropdown-menu a { padding: 10px 4px; }
   .header-inner { flex-wrap: wrap; }
   .hero h1 { font-size: 1.9rem; }
   .hero { padding: 52px 0; }
